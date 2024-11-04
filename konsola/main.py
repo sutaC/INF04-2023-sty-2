@@ -3,7 +3,7 @@
 # ************************************************
 #  klasa: Notatka
 #  opis: Zapis notatki i obsługa
-#  pola: __notes - (int) liczba notatek
+#  pola: __notes - [static] (int) liczba notatek
 #        __id - (int) unikalny identyfikator notatki
 #        __title - (str) tytuł notatki
 #        __content - (str) treść notatki
@@ -13,8 +13,8 @@ class Notatka:
     __notes: int = 0
 
     def __init__(self, title: str, content: str):
-        self.__notes += 1
-        self.__id: int = self.__notes
+        Notatka.__notes += 1
+        self.__id: int = Notatka.__notes
         self.__title: str = title
         self.__content: str = content
 
